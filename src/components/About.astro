@@ -1,0 +1,141 @@
+---
+// Aboutセクションコンポーネント
+---
+
+<section class="section-padding bg-gray-900">
+  <div class="container-custom">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- 左側：テキストコンテンツ -->
+      <div class="max-w-xl mx-auto lg:mx-0" style="margin-left: 4rem;">
+        <!-- タイトル部分 -->
+        <div class="mb-8">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">About</h2>
+          <div class="border-l-4 border-blue-400 pl-6">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">
+              文字ではなく、動きで伝える。
+            </h3>
+            <h4 class="text-xl md:text-2xl font-bold text-white">
+              <span class="text-blue-400">影響力は武器</span>になる。
+            </h4>
+          </div>
+        </div>
+
+        <!-- 本文部分 -->
+        <div class="space-y-3 text-lg text-white leading-relaxed">
+          <p>
+            「広告」と聞いて、何を思い浮かべますか？
+          </p>
+          <p>
+            チラシ、WEB広告、屋外看板、テレビCM...。
+          </p>
+          <p>
+            しかし、現代の人々はそれらに注意を向けているでしょうか？
+          </p>
+          <p>
+            街を見渡せば、多くの人が視線を向けているのは「スマホ」です。
+          </p>
+          <p>
+            そして、そのスマホで最も多くの時間を費やしているのは「SNS」。
+          </p>
+          <p class="font-bold text-blue-400">
+            いま、人々の関心と情報の中心はSNSにあります。
+          </p>
+          <p>
+            では、貴社がSNSで影響力を持つことができたら？
+          </p>
+          <p class="font-bold text-white">
+            その力は、これまでにない収益の拡大へと直結します。
+          </p>
+          <p>
+            私たちは、SNSを活用した次世代のマーケティング戦略を構築し、
+          </p>
+          <p>
+            貴社のブランド価値を最大化する広告を創造します。
+          </p>
+        </div>
+      </div>
+
+      <!-- 右側：シャボン玉ダイアグラム -->
+      <div class="flex justify-center lg:justify-end">
+        <div class="relative w-[500px] h-[500px]">
+          <!-- 中央のBuzzLiminal -->
+          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-xl z-10">
+            <span class="text-white font-bold text-2xl">BuzzLiminal</span>
+          </div>
+
+          <!-- シャボン玉たち（7個）- ランダムサイズ -->
+          <!-- 上部中央（小） -->
+          <div class="absolute top-2 left-1/2 transform -translate-x-1/2 w-18 h-18 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-white/50 z-10">
+            <span class="text-indigo-600 font-bold text-sm">分析</span>
+          </div>
+
+          <!-- 右上（特大） -->
+          <div class="absolute top-12 right-12 w-36 h-36 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-white/50 z-10">
+            <span class="text-black font-bold text-xl">TikTok</span>
+          </div>
+
+          <!-- 右中（中） -->
+          <div class="absolute top-1/2 right-4 transform translate-y-4 w-24 h-24 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-white/50 z-10">
+            <span class="text-purple-600 font-bold text-base">動画編集</span>
+          </div>
+
+          <!-- 右下（小） -->
+          <div class="absolute bottom-12 left-1/2 transform translate-x-8 w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-white/50 z-10">
+            <span class="text-blue-600 font-bold text-sm">SNS運用</span>
+          </div>
+
+          <!-- 左下（大） -->
+          <div class="absolute bottom-8 left-8 w-32 h-32 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-white/50 z-10">
+            <span class="text-green-600 font-bold text-lg">企画</span>
+          </div>
+
+          <!-- 左中（小） -->
+          <div class="absolute top-1/2 left-4 transform -translate-y-1/2 w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-white/50 z-10">
+            <span class="text-orange-600 font-bold text-sm">撮影</span>
+          </div>
+
+          <!-- 左上（中） -->
+          <div class="absolute top-12 left-12 w-24 h-24 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-white/50 z-10">
+            <span class="text-red-600 font-bold text-base">YouTube</span>
+          </div>
+
+          <!-- 直線（中央から各シャボン玉の中心点へ） -->
+          <!-- 中央から分析へ（中心点: 50%, 9%） -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none">
+            <line x1="50%" y1="50%" x2="50%" y2="9%" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+          </svg>
+
+          <!-- 中央からTikTokへ（中心点: 76%, 24%） -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none">
+            <line x1="50%" y1="50%" x2="76%" y2="24%" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+          </svg>
+
+          <!-- 中央から動画編集へ（中心点: 92%, 54%） -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none">
+            <line x1="50%" y1="50%" x2="92%" y2="54%" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+          </svg>
+
+          <!-- 中央からSNS運用へ（中心点: 58%, 88%） -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none">
+            <line x1="50%" y1="50%" x2="58%" y2="88%" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+          </svg>
+
+          <!-- 中央から企画へ（中心点: 16%, 84%） -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none">
+            <line x1="50%" y1="50%" x2="16%" y2="84%" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+          </svg>
+
+          <!-- 中央から撮影へ（中心点: 8%, 50%） -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none">
+            <line x1="50%" y1="50%" x2="8%" y2="50%" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+          </svg>
+
+          <!-- 中央からYouTubeへ（中心点: 24%, 24%） -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none">
+            <line x1="50%" y1="50%" x2="24%" y2="24%" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
