@@ -1,0 +1,532 @@
+---
+// サービス詳細ページ
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="TikTok運用プラン - BuzzLiminal">
+  <!-- ヒーローセクション -->
+  <section class="bg-gradient-to-br from-blue-900 to-indigo-900 text-white py-8 sm:py-16 md:py-20 hero-hero-section">
+    <div class="container-custom">
+      <div class="text-center">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6">Service</h1>
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-200">TikTok運用プラン</p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .hero-hero-section {
+      margin-top: 64px; /* モバイル用：ヘッダーとの間隔を広げる */
+    }
+    
+    @media (min-width: 1024px) {
+      .hero-hero-section {
+        margin-top: 128px; /* デスクトップ用 */
+      }
+    }
+  </style>
+
+  <!-- About セクション -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <!-- 上部：テキスト -->
+      <div class="max-w-4xl mx-auto mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">About</h2>
+        <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">サービスについて</h3>
+        
+        <div class="mb-8">
+          <h4 class="text-2xl font-bold text-blue-600 mb-4 text-center">業界最安値!TikTok運用が月額180,000円〜</h4>
+          <p class="text-lg text-gray-700 mb-4 text-center">
+            貴社のTikTokを、アカウント設計、企画・台本作成、撮影、編集、投稿、アカウント管理、全て代行させていただきます。
+          </p>
+          <p class="text-lg text-gray-700 text-center">
+            SNS運用業者によくある、『バズらなければ広告をかける』ということは行っておりません。弊社の企画力・編集力により、再生数を担保しております。その分の広告費がないため、業界最安値でのサービス提供を実現しております。
+          </p>
+        </div>
+      </div>
+      
+      <!-- 下部：2列レイアウト（おすすめと画像） -->
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <!-- 左側：おすすめセクション -->
+        <div class="text-center">
+          <h4 class="text-xl font-bold text-gray-800 mb-4">こんな方におすすめです</h4>
+          <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 inline-block">
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <div class="w-6 h-6 border-2 border-blue-600 rounded mr-4 mt-1 flex-shrink-0 bg-blue-600 flex items-center justify-center">
+                  <span class="text-white text-sm font-bold">✓</span>
+                </div>
+                <span class="text-gray-700 text-lg">SNSの運用を始めたい</span>
+              </li>
+              <li class="flex items-start">
+                <div class="w-6 h-6 border-2 border-blue-600 rounded mr-4 mt-1 flex-shrink-0 bg-blue-600 flex items-center justify-center">
+                  <span class="text-white text-sm font-bold">✓</span>
+                </div>
+                <span class="text-gray-700 text-lg">社内リソースが割けないので、完全にお任せしたい</span>
+              </li>
+              <li class="flex items-start">
+                <div class="w-6 h-6 border-2 border-blue-600 rounded mr-4 mt-1 flex-shrink-0 bg-blue-600 flex items-center justify-center">
+                  <span class="text-white text-sm font-bold">✓</span>
+                </div>
+                <span class="text-gray-700 text-lg">Z世代を中心とした採用を行いたい</span>
+              </li>
+              <li class="flex items-start">
+                <div class="w-6 h-6 border-2 border-blue-600 rounded mr-4 mt-1 flex-shrink-0 bg-blue-600 flex items-center justify-center">
+                  <span class="text-white text-sm font-bold">✓</span>
+                </div>
+                <span class="text-gray-700 text-lg">第2のホームページとして活用したい</span>
+              </li>
+              <li class="flex items-start">
+                <div class="w-6 h-6 border-2 border-blue-600 rounded mr-4 mt-1 flex-shrink-0 bg-blue-600 flex items-center justify-center">
+                  <span class="text-white text-sm font-bold">✓</span>
+                </div>
+                <span class="text-gray-700 text-lg">社内・店内の雰囲気を動画で伝えたい</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- 右側：画像 -->
+        <div class="flex justify-center lg:justify-end">
+          <div class="w-80 h-80 bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="w-full h-full bg-gradient-to-br from-blue-100 to-green-100 flex items-center justify-center">
+              <div class="text-center text-gray-600">
+                <div class="text-6xl mb-4">👩‍💼</div>
+                <div class="text-lg font-semibold">TikTok運用</div>
+                <div class="text-sm opacity-75">専門コンサルタント</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- なぜTikTokを使うべきなのか？セクション -->
+  <section class="section-padding bg-gray-900 text-white">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">なぜTikTokを使うべきなのか？</h2>
+      </div>
+      
+      <div class="space-y-16">
+        <!-- POINT 01 -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">POINT 01</h3>
+            <h4 class="text-3xl font-bold mb-6">▶︎ユーザー増加数が圧倒的に速い!</h4>
+            <p class="text-lg text-gray-300 leading-relaxed">
+              TikTokは他のSNSに比べ、サービス開始後のユーザー増加数が圧倒的に速い。右の図は、サービスが市場を獲得するための指標として用いられる「キャズム理論」。TikTokは「キャズム」という壁を越え、アーリーマジョリティに属する。
+            </p>
+            <p class="text-sm text-gray-400 mt-4">
+              出典元:ガリレオ(2023年),『TikTokビジネス最強の攻略術』,株式会社技術評論社
+            </p>
+          </div>
+          <div class="flex justify-center lg:justify-end">
+            <div class="w-80 h-60 bg-gray-700 rounded-lg flex items-center justify-center">
+              <div class="text-gray-400 text-center">
+                <div class="text-sm">スクリーンショット 2024-10-04 12.23.52.png</div>
+                <div class="text-xs">（キャズム理論の図）</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- POINT 02 -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">POINT 02</h3>
+            <h4 class="text-3xl font-bold mb-6">▶︎ユーザー利用率も高い！</h4>
+            <p class="text-lg text-gray-300 leading-relaxed">
+              利用率も他のSNSに比べ増加傾向→視聴者はより没入感の高いTikTokへ。発信者はYouTubeからの撤退などが要因。また、TikTokはヘビーユーザーが多く、日間利用時間が長い。
+            </p>
+            <p class="text-sm text-gray-400 mt-4">
+              出典元: <a href="https://note.fuller-inc.com/m/m85f1c4c5deaa" class="text-blue-400 hover:underline">https://note.fuller-inc.com/m/m85f1c4c5deaa</a>
+            </p>
+          </div>
+          <div class="flex justify-center lg:justify-end">
+            <div class="w-80 h-60 bg-gray-700 rounded-lg flex items-center justify-center">
+              <div class="text-gray-400 text-center">
+                <div class="text-sm">スクリーンショット 2024-10-04 12.26.46.png</div>
+                <div class="text-xs">（利用率の図）</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- POINT 03 -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">POINT 03</h3>
+            <h4 class="text-3xl font-bold mb-6">▶︎ビジネス活用としても有効！</h4>
+            <p class="text-lg text-gray-300 leading-relaxed">
+              数ある広告媒体の中でも、商品購入のきっかけとなった媒体はSNSが1位。SNSの中でも、購入経験のあるユーザーの割合はTikTokが他のSNSに比べ多い。
+            </p>
+            <p class="text-sm text-gray-400 mt-4">
+              出典元: <a href="https://webtan.impress.co.jp/n/2022/01/14/42189" class="text-blue-400 hover:underline">https://webtan.impress.co.jp/n/2022/01/14/42189</a>
+            </p>
+          </div>
+          <div class="flex justify-center lg:justify-end">
+            <div class="w-80 h-60 bg-gray-700 rounded-lg flex items-center justify-center">
+              <div class="text-gray-400 text-center">
+                <div class="text-sm">スクリーンショット 2024-10-04 12.28.34.png</div>
+                <div class="text-xs">（ビジネス活用の図）</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature セクション -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Feature</h2>
+        <h3 class="text-2xl font-bold text-gray-800 mb-8">サービスの特徴</h3>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- ビデオ編集 -->
+        <div class="text-center">
+          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">▶︎本格的な編集技術</h4>
+          <p class="text-gray-600">テレビ番組でも使用する編集ソフトを使用。</p>
+        </div>
+
+        <!-- コストパフォーマンス -->
+        <div class="text-center">
+          <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">▶︎コストパフォーマンス</h4>
+          <p class="text-gray-600">社員1人にかかる人件費よりも少ないコストで、SNSのプロ達が複数人で貴社のSNSを担当。</p>
+        </div>
+
+        <!-- 結果にコミット -->
+        <div class="text-center">
+          <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">▶︎結果にコミット</h4>
+          <p class="text-gray-600">ただバズれば良いわけではありません。集客・求人のための運用で結果にコミット。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plan セクション -->
+  <section class="section-padding bg-gray-50">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Plan</h2>
+        <h3 class="text-2xl font-bold text-gray-800 mb-8">料金プラン</h3>
+        <p class="text-lg text-gray-600 mb-8">※関東圏内は撮影交通費込み。関東圏外は別途交通費と宿泊費がかかります。</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- ライトプラン -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-blue-200 hover:border-blue-400 transition-all duration-300">
+          <div class="text-center mb-6">
+            <h4 class="text-lg font-bold text-gray-700 mb-4">まずは試しに導入したい</h4>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">ライトプラン</h3>
+            <div class="text-4xl font-bold text-blue-600 mb-2">180,000円/月</div>
+            <div class="text-gray-500">(税込)</div>
+            <p class="text-lg font-bold text-gray-800 mt-4">投稿本数：6本/月</p>
+          </div>
+          <ul class="space-y-3 text-gray-700 mb-8">
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              企画、台本
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              撮影(月1回)
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              編集
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              投稿管理
+            </li>
+          </ul>
+          <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200">
+            お申し込み
+          </button>
+        </div>
+
+        <!-- スタンダードプラン -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-blue-500 transform scale-105 relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-bold">人気</span>
+          </div>
+          <div class="text-center mb-6">
+            <h4 class="text-lg font-bold text-gray-700 mb-4">本格的に運用を開始したい</h4>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">スタンダードプラン</h3>
+            <div class="text-4xl font-bold text-blue-600 mb-2">250,000円/月</div>
+            <div class="text-gray-500">(税込)</div>
+            <p class="text-lg font-bold text-gray-800 mt-4">投稿本数：10本/月</p>
+          </div>
+          <ul class="space-y-3 text-gray-700 mb-8">
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              企画、台本
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              撮影(月1,2回)
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              編集
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              投稿管理
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              分析レポート(毎月)
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              MTG(月1回)
+            </li>
+          </ul>
+          <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200">
+            お申し込み
+          </button>
+        </div>
+
+        <!-- プレミアムプラン -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all duration-300">
+          <div class="text-center mb-6">
+            <h4 class="text-lg font-bold text-gray-700 mb-4">短期的に成果を上げ、時間節約したい</h4>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">プレミアムプラン</h3>
+            <div class="text-4xl font-bold text-purple-600 mb-2">300,000円/月</div>
+            <div class="text-gray-500">(税込)</div>
+            <p class="text-lg font-bold text-gray-800 mt-4">投稿本数：13本/月</p>
+          </div>
+          <ul class="space-y-3 text-gray-700 mb-8">
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              企画、台本
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              撮影(月1,2回)
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              編集
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              投稿管理
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              分析レポート(2ヶ月毎)
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-3">•</span>
+              MTG(月1回)
+            </li>
+          </ul>
+          <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200">
+            お申し込み
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 対応業務について -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">対応業務について</h2>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <!-- 企画 -->
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">企画</h3>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            TikTokは2週間でトレンドが変わるプラットフォーム。トレンド企画や反応が高かった企画を、貴社の採用情報や魅力と掛け合わせることで、多くの視聴者に動画を届けます。
+          </p>
+        </div>
+
+        <!-- 編集 -->
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">編集</h3>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            テレビ番組でも使用する編集ソフトを用い、プロの編集チームでバズる動画を制作します。綺麗なデザインを心がけているため、ブランディングを損なう心配はありません。
+          </p>
+        </div>
+
+        <!-- 撮影 -->
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">撮影</h3>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            貴社へ伺い、対面にて撮影を行います。ショート動画は撮影時の「画角」や「動き」が再生回数に直結します。そのため、撮影も弊社でサポートしております。
+          </p>
+        </div>
+
+        <!-- 投稿管理 -->
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">投稿管理</h3>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            投稿も弊社で行い、コメントやDM、動画の内部データを常にチェックしています。データを元に、企画戦略を立てていきます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flow セクション -->
+  <section class="section-padding bg-gray-50">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Flow</h2>
+        <h3 class="text-2xl font-bold text-gray-800 mb-8">ご利用の流れ</h3>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8">
+          <!-- 1.問い合わせフォーム -->
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-gray-900 mb-3">問い合わせフォーム</h4>
+                <p class="text-lg text-gray-700">30分の無料面談が可能です。まずは、問い合わせフォームにてご連絡ください。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2.ヒアリング・ご契約 -->
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-gray-900 mb-3">ヒアリング・ご契約</h4>
+                <p class="text-lg text-gray-700">運用開始前に、運用の目的(KPI)や契約内容の確認をします。契約書をご確認のうえ、クラウドサインにてご承諾いただき次第、サービスのご利用を開始できます。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3.企画 -->
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-gray-900 mb-3">企画</h4>
+                <p class="text-lg text-gray-700">ヒアリングを基に、企画と台本を作成します。TikTokで反応が良い企画パターンと会社情報を掛け合わせます。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4.撮影 -->
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-gray-900 mb-3">撮影</h4>
+                <p class="text-lg text-gray-700">台本を基に、撮影を行います。顔の高さ・角度、カメラとの距離など画角もかなりシビアです。弊社で撮影もサポートします。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5.編集 -->
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-gray-900 mb-3">編集</h4>
+                <p class="text-lg text-gray-700">プロが使う編集ソフトで編集。視認性の高いデザイン、テンポ感、BGM選定、画角などショート動画に適した編集を行います。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6.投稿 -->
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-gray-900 mb-3">投稿</h4>
+                <p class="text-lg text-gray-700">完成した動画をご確認いただいたら、投稿を行います。ハッシュタグ選定、コメント返信、DM対応、動画毎のデータ分析などを行います。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7.レポート作成 -->
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-gray-900 mb-3">レポート作成</h4>
+                <p class="text-lg text-gray-700">データを基に、アカウントの方向性や企画変更などのご提案をします。また、KPIに対する評価を行います。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q&A セクション -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Q&A</h2>
+        <h3 class="text-2xl font-bold text-gray-800 mb-8">よくある質問</h3>
+      </div>
+      
+      <div class="max-w-2xl mx-auto">
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <p class="text-center text-gray-600">Q&Aの内容は準備中です</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

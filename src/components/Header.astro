@@ -1,90 +1,173 @@
 ---
-// ヘッダーコンポーネント
+// ヘッダーコンポーネント（モバイル最適化版）
 ---
 
-<header class="bg-white shadow-sm sticky top-0 z-50">
-  <!-- 上段：ロゴ・スローガン・連絡先情報 -->
-  <div class="bg-gray-900 text-white">
-    <div class="container-custom">
-      <div class="flex items-center justify-center h-18 px-8">
+<header class="bg-gray-900 text-white fixed top-0 left-0 right-0 z-50">
+  <!-- モバイル用ヘッダー -->
+  <div class="block lg:hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- 左側：ハンバーガーメニュー -->
+        <button class="pl-2 pr-3 py-2 text-white" id="hamburger-button">
+          <svg class="w-6 h-6 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="hamburger-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" id="hamburger-lines"></path>
+          </svg>
+        </button>
+
         <!-- 中央：ロゴ -->
-        <div class="flex items-center space-x-3 absolute left-1/2 transform -translate-x-full -ml-74">
+        <div class="flex items-center space-x-3">
           <div class="w-8 h-8 bg-blue-400 rounded-lg flex items-center justify-center">
             <div class="text-white text-lg font-bold">B</div>
           </div>
-          <span class="text-4xl font-bold text-blue-300 tracking-wider">BuzzLiminal</span>
-        </div>
-        
-        <!-- 左側：スローガン -->
-        <div class="absolute left-1/2 transform -translate-x-70 hidden md:block text-sm">
-          <div>日本全国 | TikTok運用代行なら</div>
-          <div class="font-bold">BuzzLiminal</div>
+          <span class="text-2xl font-bold text-blue-300 tracking-wider">BuzzLiminal</span>
         </div>
 
-        <!-- 右側：連絡先情報 -->
-        <div class="absolute left-1/2 transform translate-x-18 flex items-center space-x-6">
-          <!-- 電話番号 -->
-          <div class="hidden lg:flex items-center space-x-3">
-            <div class="text-white text-xl">📞</div>
-            <div class="text-center">
-              <div class="font-bold text-2xl text-white">090-9950-1315</div>
-              <div class="text-blue-200 text-xs">受付時間 10:00-20:00</div>
+        <!-- 右側：LINEボタン -->
+        <button class="hidden sm:flex text-white px-4 py-2 rounded-lg items-center space-x-2 transition-all duration-200 hover:scale-105 cursor-pointer" style="background-color: #03C755;">
+          <img src="/LINE_Brand_icon.png" alt="LINE" class="w-4 h-4" />
+          <span class="text-sm">LINE相談</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- デスクトップ用ヘッダー -->
+  <div class="hidden lg:block">
+    <!-- 上段：ロゴ・スローガン・連絡先情報 -->
+    <div class="bg-gray-900 text-white">
+      <div class="container-custom">
+                 <div class="flex items-center justify-between h-18 px-8">
+                                                                               <!-- 左側：ロゴ -->
+                     <div class="flex items-center space-x-3">
+                       <div class="w-8 h-8 bg-blue-400 rounded-lg flex items-center justify-center">
+                         <div class="text-white text-lg font-bold">B</div>
+                       </div>
+                       <span class="text-4xl font-bold text-blue-300 tracking-wider">BuzzLiminal</span>
+                     </div>
+                     
+                                                                                 <!-- 中央：スローガン -->
+                       <div class="hidden md:block text-sm text-left mr-auto ml-6">
+                         <div>日本全国 | TikTok運用代行なら</div>
+                         <div class="font-bold">BuzzLiminal</div>
+                       </div>
+
+                   <!-- 右側：連絡先情報 -->
+                   <div class="flex items-center space-x-6">
+            <!-- 電話番号 -->
+            <div class="hidden lg:flex items-center space-x-3">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              <div class="text-center">
+                <div class="font-bold text-2xl text-white">090-9950-1315</div>
+                <div class="text-blue-200 text-xs">受付時間 10:00-20:00</div>
+              </div>
             </div>
+            
+            <!-- LINEボタン -->
+            <button class="text-white px-6 py-3 rounded-lg flex items-center space-x-2 transition-all duration-200 hover:scale-105 cursor-pointer" style="background-color: #03C755;">
+              <img src="/LINE_Brand_icon.png" alt="LINE" class="w-5 h-5" />
+              <span class="text-base">LINE相談</span>
+            </button>
           </div>
-          
-          <!-- LINEボタン -->
-          <button class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg flex items-center space-x-2 transition-colors duration-200">
-            <div class="text-white text-base font-bold">LINE</div>
-            <span class="text-base">LINE相談</span>
-          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 下段：ナビゲーションメニュー -->
+    <div class="bg-gray-900 text-white">
+      <div class="container-custom">
+        <div class="flex items-center justify-center h-14 px-8">
+          <!-- ナビゲーション -->
+          <nav class="flex space-x-24">
+            <a href="/" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">Home</a>
+            <a href="/service" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">Service</a>
+            <a href="/company" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">Company</a>
+            <a href="/works" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">Works</a>
+            <a href="#recruit" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">Recruit</a>
+          </nav>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 下段：ナビゲーションメニュー -->
-  <div class="bg-gray-900 text-white">
-    <div class="container-custom">
-      <div class="flex items-center justify-center h-14 px-8">
-        <!-- ナビゲーション -->
-        <nav class="flex space-x-24">
-          <a href="/" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">Home</a>
-          <a href="#service" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">Service</a>
-          <a href="#news" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">News</a>
-          <a href="#company" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">Company</a>
-          <a href="#recruit" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">Recruit</a>
-          <a href="#blog" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">Blog</a>
-        </nav>
-
-        <!-- モバイルメニューボタン -->
-        <button class="md:hidden p-2" id="mobile-menu-button">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  <!-- ハンバーガーメニュー -->
+  <div class="hidden" id="hamburger-menu">
+    <div class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-xl z-40" id="menu-overlay"></div>
+    
+    <div class="fixed top-0 left-0 h-full w-full max-w-md bg-white z-50 transform -translate-x-full transition-all duration-700 ease-out" id="menu-content">
+      <!-- メニューヘッダー -->
+      <div class="flex items-center justify-between p-6 border-b border-gray-100">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+            <div class="text-white text-lg font-bold">B</div>
+          </div>
+          <span class="text-xl font-bold text-gray-900">BuzzLiminal</span>
+        </div>
+        <button class="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200" id="close-menu-button">
+          <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
 
-      <!-- モバイルメニュー -->
-      <div class="md:hidden hidden" id="mobile-menu">
-        <div class="px-2 pt-2 pb-3 space-y-1 bg-gray-900 border-t border-gray-700">
-          <a href="/" class="block px-3 py-2 text-gray-300 hover:text-white">Home</a>
-          <a href="#service" class="block px-3 py-2 text-gray-300 hover:text-white">Service</a>
-          <a href="#news" class="block px-3 py-2 text-gray-300 hover:text-white">News</a>
-          <a href="#company" class="block px-3 py-2 text-gray-300 hover:text-white">Company</a>
-          <a href="#recruit" class="block px-3 py-2 text-gray-300 hover:text-white">Recruit</a>
-          <a href="#blog" class="block px-3 py-2 text-gray-300 hover:text-white">Blog</a>
-          
-          <!-- モバイル用連絡先情報 -->
-          <div class="pt-4 border-t border-gray-700">
-            <div class="text-sm px-3 py-2">
-              <div class="font-medium text-white">090-9950-1315</div>
-              <div class="text-gray-400">受付時間 10:00-20:00</div>
+      <!-- ナビゲーション -->
+      <div class="p-6">
+        <nav class="space-y-1">
+          <a href="/" class="group flex items-center px-4 py-4 text-lg font-medium text-gray-900 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-300 transform hover:translate-x-2">
+            <span>Home</span>
+            <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
             </div>
-            <button class="bg-green-500 hover:bg-green-600 text-white w-full mt-2 mx-3 px-4 py-2 rounded-lg flex items-center justify-center space-x-2">
-              <div class="text-white text-sm font-bold">LINE</div>
-              <span class="text-sm">LINE相談</span>
-            </button>
-          </div>
+          </a>
+          
+          <a href="/service" class="group flex items-center px-4 py-4 text-lg font-medium text-gray-900 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-300 transform hover:translate-x-2">
+            <span>Service</span>
+            <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </a>
+          
+          <a href="/company" class="group flex items-center px-4 py-4 text-lg font-medium text-gray-900 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-300 transform hover:translate-x-2">
+            <span>Company</span>
+            <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </a>
+          
+          <a href="/works" class="group flex items-center px-4 py-4 text-lg font-medium text-gray-900 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-300 transform hover:translate-x-2">
+            <span>Works</span>
+            <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </a>
+          
+          <a href="#recruit" class="group flex items-center px-4 py-4 text-lg font-medium text-gray-900 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-300 transform hover:translate-x-2">
+            <span>Recruit</span>
+            <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </a>
+          
+
+        </nav>
+      </div>
+
+      <!-- フッター -->
+      <div class="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-100 bg-gray-50">
+        <div class="text-center">
+          <p class="text-sm text-gray-500">© 2024 BuzzLiminal</p>
+          <p class="text-xs text-gray-400 mt-1">All rights reserved</p>
         </div>
       </div>
     </div>
@@ -92,13 +175,84 @@
 </header>
 
 <script>
-  // モバイルメニューの切り替え
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
+  // ハンバーガーメニューの切り替え
+  const hamburgerButton = document.getElementById('hamburger-button');
+  const hamburgerMenu = document.getElementById('hamburger-menu');
+  const menuContent = document.getElementById('menu-content');
+  const closeMenuButton = document.getElementById('close-menu-button');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  let isMenuOpen = false;
 
-  if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+  if (hamburgerButton && hamburgerMenu && menuContent && hamburgerIcon) {
+    // メニューを開く
+    hamburgerButton.addEventListener('click', () => {
+      openMenu();
     });
+
+    // 閉じるボタンでメニューを閉じる
+    if (closeMenuButton) {
+      closeMenuButton.addEventListener('click', () => {
+        closeMenu();
+      });
+    }
+
+    // 背景クリックでメニューを閉じる
+    const menuOverlay = document.getElementById('menu-overlay');
+    if (menuOverlay) {
+      menuOverlay.addEventListener('click', () => {
+        closeMenu();
+      });
+    }
+
+    // ESCキーでメニューを閉じる
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        closeMenu();
+      }
+    });
+  }
+
+  function openMenu() {
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const menuContent = document.getElementById('menu-content');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    
+    if (hamburgerMenu && menuContent && hamburgerIcon) {
+      hamburgerMenu.classList.remove('hidden');
+      isMenuOpen = true;
+      
+      // アイコンをXマークに変更
+      hamburgerIcon.innerHTML = `
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      `;
+      
+      // 少し遅延させてからアニメーション開始
+      setTimeout(() => {
+        menuContent.classList.remove('-translate-x-full');
+      }, 10);
+    }
+  }
+
+  function closeMenu() {
+    const menuContent = document.getElementById('menu-content');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    
+    if (menuContent && hamburgerIcon) {
+      menuContent.classList.add('-translate-x-full');
+      isMenuOpen = false;
+      
+      // アイコンを三本線に戻す
+      hamburgerIcon.innerHTML = `
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      `;
+      
+      // アニメーション完了後にメニューを非表示
+      setTimeout(() => {
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        if (hamburgerMenu) {
+          hamburgerMenu.classList.add('hidden');
+        }
+      }, 700);
+    }
   }
 </script> 

@@ -1,0 +1,217 @@
+---
+// Works実績一覧ページ
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Works - 実績一覧 | BuzzLiminal" description="BuzzLiminalのTikTok運用代行実績をご紹介します。飲食店、小売店、サービス業など、様々な業界での成功事例をご覧いただけます。">
+  
+  <!-- ヒーローセクション -->
+  <section class="bg-gradient-to-br from-blue-900 to-indigo-900 text-white py-8 sm:py-16 md:py-20 hero-hero-section">
+    <div class="container-custom">
+      <div class="text-center">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6">Works</h1>
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-200">実績一覧</p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .hero-hero-section {
+      margin-top: 64px; /* モバイル用：ヘッダーとの間隔を広げる */
+    }
+    
+    @media (min-width: 1024px) {
+      .hero-hero-section {
+        margin-top: 128px; /* デスクトップ用 */
+      }
+    }
+  </style>
+
+  <!-- 実績一覧セクション -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <!-- 実績一覧 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="works-grid">
+        <!-- 飲食店実績 -->
+        <div class="work-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" data-category="food">
+          <div class="relative">
+            <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
+              <div class="text-center text-gray-500">
+                <svg class="w-16 h-16 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <div class="text-sm font-medium">実績画像</div>
+                <div class="text-xs">クリックして追加</div>
+              </div>
+            </div>
+            <div class="absolute top-4 left-4">
+              <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">飲食店</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">カフェ「Green Leaf」</h3>
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-500">2024年3月</div>
+              <button class="text-blue-600 hover:text-blue-800 font-semibold text-sm">詳細を見る</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 小売店実績 -->
+        <div class="work-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" data-category="retail">
+          <div class="relative">
+            <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
+              <div class="text-center text-gray-500">
+                <svg class="w-16 h-16 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <div class="text-sm font-medium">実績画像</div>
+                <div class="text-xs">クリックして追加</div>
+              </div>
+            </div>
+            <div class="absolute top-4 left-4">
+              <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">小売店</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">アパレルショップ「Style Up」</h3>
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-500">2024年2月</div>
+              <button class="text-blue-600 hover:text-blue-800 font-semibold text-sm">詳細を見る</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- サービス業実績 -->
+        <div class="work-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" data-category="service">
+          <div class="relative">
+            <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
+              <div class="text-center text-gray-500">
+                <svg class="w-16 h-16 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <div class="text-sm font-medium">実績画像</div>
+                <div class="text-xs">クリックして追加</div>
+              </div>
+            </div>
+            <div class="absolute top-4 left-4">
+              <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">サービス業</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">エステサロン「Beauty Plus」</h3>
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-500">2024年1月</div>
+              <button class="text-blue-600 hover:text-blue-800 font-semibold text-sm">詳細を見る</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 飲食店実績2 -->
+        <div class="work-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" data-category="food">
+          <div class="relative">
+            <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
+              <div class="text-center text-gray-500">
+                <svg class="w-16 h-16 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <div class="text-sm font-medium">実績画像</div>
+                <div class="text-xs">クリックして追加</div>
+              </div>
+            </div>
+            <div class="absolute top-4 left-4">
+              <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">飲食店</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">居酒屋「和み亭」</h3>
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-500">2023年12月</div>
+              <button class="text-blue-600 hover:text-blue-800 font-semibold text-sm">詳細を見る</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 小売店実績2 -->
+        <div class="work-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" data-category="retail">
+          <div class="relative">
+            <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
+              <div class="text-center text-gray-500">
+                <svg class="w-16 h-16 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <div class="text-sm font-medium">実績画像</div>
+                <div class="text-xs">クリックして追加</div>
+              </div>
+            </div>
+            <div class="absolute top-4 left-4">
+              <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">小売店</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">雑貨店「Lifestyle」</h3>
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-500">2023年11月</div>
+              <button class="text-blue-600 hover:text-blue-800 font-semibold text-sm">詳細を見る</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- サービス業実績2 -->
+        <div class="work-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" data-category="service">
+          <div class="relative">
+            <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
+              <div class="text-center text-gray-500">
+                <svg class="w-16 h-16 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <div class="text-sm font-medium">実績画像</div>
+                <div class="text-xs">クリックして追加</div>
+              </div>
+            </div>
+            <div class="absolute top-4 left-4">
+              <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">サービス業</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">フィットネスジム「Active Life」</h3>
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-500">2023年10月</div>
+              <button class="text-blue-600 hover:text-blue-800 font-semibold text-sm">詳細を見る</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせセクション -->
+  <section class="py-16 bg-blue-900 text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl font-bold mb-6">お問い合わせ・お見積もり</h2>
+      <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+        TikTok運用代行について、お気軽にお問い合わせください。<br>
+        貴社の業界や規模に合わせた最適なプランをご提案いたします。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button class="bg-white text-blue-900 font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+          お問い合わせはこちら
+        </button>
+        <button class="border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-blue-900 transition-colors duration-200">
+          無料相談を申し込む
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .work-item {
+      transition: all 0.3s ease;
+    }
+
+    .work-item:hover {
+      transform: translateY(-4px);
+    }
+  </style>
+
+</Layout>
