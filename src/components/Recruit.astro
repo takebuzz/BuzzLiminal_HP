@@ -1,31 +1,111 @@
 ---
-// Recruitセクションコンポーネント
+// Recruitセクションコンポーネント（モバイルとデスクトップで分離）
 ---
 
-<section id="recruit" class="section-padding bg-white relative overflow-hidden">
-  <!-- 背景画像（二層目） -->
-  <div class="absolute inset-0 bg-[url('/recruit.jpg')] bg-cover bg-center" style="background-size: 80%; background-repeat: no-repeat; background-position: center;"></div>
-
-  <div class="container-custom relative z-10">
-    <div class="flex justify-center items-center min-h-[600px]">
-      <!-- 中央の情報パネル（三層目） -->
-              <div class="bg-blue-900 rounded-lg p-8 max-w-xl mx-auto lg:mx-0 lg:ml-16 text-center">
-          <h2 class="text-4xl md:text-5xl font-bold text-white mb-3">Recruit</h2>
-          <p class="text-xl text-white mb-6">採用情報</p>
-          
-          <div class="text-left space-y-3 text-white mb-6">
-          <p class="text-lg">
-            私たちと共に、"新時代広告"を創造しませんか？
-          </p>
-          <p class="text-lg">
-            Z世代が社会を変えていく未来。一緒に挑戦できる仲間を集めています。
-          </p>
+<section class="recruit-section">
+  <!-- モバイル専用レイアウト -->
+  <div class="block lg:hidden recruit-section-mobile">
+    <div class="relative z-20 container-custom py-8 sm:py-12 h-full flex items-center">
+      <div class="flex flex-col justify-center items-center min-h-[600px] space-y-6">
+        <!-- セクションタイトル（カード外） -->
+        <div class="text-center">
+          <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">
+            Recruit
+          </h2>
         </div>
-        
-        <button class="bg-white text-blue-900 font-bold py-4 px-8 rounded-full hover:bg-gray-100 transition-colors duration-200">
-          採用情報はこちら →
-        </button>
+
+        <!-- 中央の画像カード -->
+        <div class="relative mx-auto w-80 h-64 sm:w-96 sm:h-80 rounded-xl overflow-hidden shadow-xl">
+          <img src="/recruit.jpg" alt="Recruit" class="w-full h-full object-cover" />
+          
+          <!-- 画像の上に文字 -->
+          <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+            <div class="bg-white text-blue-900 px-4 sm:px-6 py-2 sm:py-3 rounded-lg inline-block font-bold text-base sm:text-lg mb-4">
+              採用情報
+            </div>
+            <div class="text-center space-y-2">
+              <p class="text-sm sm:text-base text-white font-bold drop-shadow-2xl" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(0,0,0,0.8);">
+                私たちと共に、"新時代広告"を創造しませんか？
+              </p>
+              <p class="text-sm sm:text-base text-white font-bold drop-shadow-2xl" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(0,0,0,0.8);">
+                Z世代が社会を変えていく未来。一緒に挑戦できる仲間を集めています。
+              </p>
+            </div>
+            <div class="mt-4">
+              <button class="bg-white text-blue-900 font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition-colors duration-200 text-sm sm:text-base">
+                採用情報はこちら →
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</section> 
+
+  <!-- デスクトップ専用レイアウト（元のまま） -->
+  <div class="hidden lg:block recruit-section-desktop">
+    <div class="section-padding bg-white relative overflow-hidden">
+      <!-- 背景画像（二層目） -->
+      <div class="absolute inset-0 bg-[url('/recruit.jpg')] bg-cover bg-center" style="background-size: 80%; background-repeat: no-repeat; background-position: center;"></div>
+
+      <div class="container-custom relative z-10">
+        <div class="flex justify-center items-center min-h-[600px]">
+          <!-- 中央の情報パネル（三層目） -->
+          <div class="bg-blue-900 rounded-lg p-4 sm:p-6 max-w-sm sm:max-w-md mx-auto px-4 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">Recruit</h2>
+            <p class="text-lg sm:text-xl text-white mb-4 sm:mb-6">採用情報</p>
+            
+            <div class="text-center space-y-3 text-white mb-6">
+              <p class="text-lg">
+                私たちと共に、"新時代広告"を創造しませんか？
+              </p>
+              <p class="text-lg">
+                Z世代が社会を変えていく未来。一緒に挑戦できる仲間を集めています。
+              </p>
+            </div>
+            
+            <button class="bg-white text-blue-900 font-bold py-4 px-8 rounded-full hover:bg-gray-100 transition-colors duration-200">
+              採用情報はこちら →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Recruitセクション共通スタイル */
+  .recruit-section {
+    position: relative;
+  }
+
+  /* モバイル専用スタイル */
+  .recruit-section-mobile {
+    position: relative;
+    background-color: #f3f4f6; /* 薄いグレーの背景 */
+    overflow: hidden;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* デスクトップ専用スタイル */
+  .recruit-section-desktop {
+    background-color: white;
+  }
+
+  /* 強制的な表示制御 */
+  @media (min-width: 1024px) {
+    .recruit-section-mobile {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .recruit-section-desktop {
+      display: none !important;
+    }
+  }
+</style> 

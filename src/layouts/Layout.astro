@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
 export interface Props {
   title: string;
   description?: string;
@@ -22,7 +25,11 @@ const { title, description = "日本全国｜TikTok運用代行ならBuzzLiminal
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   </head>
   <body class="font-sans bg-white">
-    <slot />
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
 
