@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Recruit - 募集要項 | BuzzLiminal">
+  <!-- ヒーローセクション（背景画像+オーバーレイ+固定高さ） -->
+  <section class="relative pt-32 lg:pt-40">
+    <div class="absolute inset-0 bg-[url('/recruit_hero.jpg')] bg-cover bg-center"></div>
+    <div class="absolute inset-0" style="background: rgba(0,27,46,0.5);"></div>
+    <div class="relative container-custom h-[300px] flex items-center justify-center text-center">
+      <div class="text-white">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6">Recruit</h1>
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90">採用情報</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  
+
+  <!-- 募集要項 セクション -->
+  <section class="bg-[#F6F8FB] typography-standard">
+    <div class="container-custom pt-20 sm:pt-16 pb-24">
+      <!-- 見出し -->
+      <div class="mb-6">
+        <h2 class="text-5xl font-extrabold text-[#0B0B0B] leading-none mb-2">Job info</h2>
+        <p class="text-lg font-normal text-gray-600">募集要項</p>
+      </div>
+
+      <!-- キービジュアル画像 -->
+      <div>
+        <img
+          src="/recruit.jpg"
+          alt="打ち合わせ中の様子（募集要項キービジュアル・プレースホルダー）"
+          class="w-full rounded-[16px] md:rounded-[20px] object-cover aspect-[21/9]"
+        />
+      </div>
+
+      <!-- 募集要項カード（半重なり） -->
+      <div class="relative z-[2] -mt-8 md:-mt-14">
+        <div class="mx-auto bg-white rounded-[14px] md:rounded-[18px] shadow-[0_10px_30px_rgba(0,0,0,0.08)] p-5 md:p-7">
+          <dl class="divide-y divide-[#E5E7EB]">
+            <!-- 1 職種 -->
+            <div class="grid grid-cols-12 gap-3 md:gap-6 py-4 md:py-4">
+              <dt class="col-span-12 md:col-span-3 text-[15px] md:text-[16px] font-bold text-[#0B0B0B]">職種</dt>
+              <dd class="col-span-12 md:col-span-9 text-[15px] md:text-[16px] leading-[1.9] text-[#0F172A] md:mt-0 mt-2">SNSコンテンツクリエイター</dd>
+            </div>
+            <!-- 2 雇用形態 -->
+            <div class="grid grid-cols-12 gap-3 md:gap-6 py-4 md:py-4">
+              <dt class="col-span-12 md:col-span-3 text-[15px] md:text-[16px] font-bold text-[#0B0B0B]">雇用形態</dt>
+              <dd class="col-span-12 md:col-span-9 text-[15px] md:text-[16px] leading-[1.9] text-[#0F172A] md:mt-0 mt-2">業務委託</dd>
+            </div>
+            <!-- 3 仕事内容 -->
+            <div class="grid grid-cols-12 gap-3 md:gap-6 py-4 md:py-4">
+              <dt class="col-span-12 md:col-span-3 text-[15px] md:text-[16px] font-bold text-[#0B0B0B]">仕事内容</dt>
+              <dd class="col-span-12 md:col-span-9 text-[15px] md:text-[16px] leading-[1.9] text-[#0F172A] md:mt-0 mt-2">動画編集、市場リサーチ、企画制作、SNSアカウントの管理 など</dd>
+            </div>
+            <!-- 4 給与 -->
+            <div class="grid grid-cols-12 gap-3 md:gap-6 py-4 md:py-4">
+              <dt class="col-span-12 md:col-span-3 text-[15px] md:text-[16px] font-bold text-[#0B0B0B]">給与</dt>
+              <dd class="col-span-12 md:col-span-9 text-[15px] md:text-[16px] leading-[1.9] text-[#0F172A] md:mt-0 mt-2">仕事内容によって変わります</dd>
+            </div>
+            <!-- 5 勤務時間 -->
+            <div class="grid grid-cols-12 gap-3 md:gap-6 py-4 md:py-4">
+              <dt class="col-span-12 md:col-span-3 text-[15px] md:text-[16px] font-bold text-[#0B0B0B]">勤務時間</dt>
+              <dd class="col-span-12 md:col-span-9 text-[15px] md:text-[16px] leading-[1.9] text-[#0F172A] md:mt-0 mt-2">10:00〜20:00（基本的には業務委託なので、時間は自由でも。）</dd>
+            </div>
+            <!-- 6 勤務地 -->
+            <div class="grid grid-cols-12 gap-3 md:gap-6 py-4 md:py-4">
+              <dt class="col-span-12 md:col-span-3 text-[15px] md:text-[16px] font-bold text-[#0B0B0B]">勤務地</dt>
+              <dd class="col-span-12 md:col-span-9 text-[15px] md:text-[16px] leading-[1.9] text-[#0F172A] md:mt-0 mt-2">東京都町田市原町田1-2-11 グラディート町田804</dd>
+            </div>
+            <!-- 7 福利厚生 -->
+            <div class="grid grid-cols-12 gap-3 md:gap-6 py-4 md:py-4">
+              <dt class="col-span-12 md:col-span-3 text-[15px] md:text-[16px] font-bold text-[#0B0B0B]">福利厚生</dt>
+              <dd class="col-span-12 md:col-span-9 text-[15px] md:text-[16px] leading-[1.9] text-[#0F172A] md:mt-0 mt-2">オフィスの利用、交通費、飲食代 など</dd>
+            </div>
+          </dl>
+        </div>
+        <!-- CTA: 福利厚生の直下に配置 -->
+        <div class="mt-8 md:mt-10 flex justify-center">
+          <a
+            href="https://line.me/R/ti/p/@792kbrnd?ts=02241454&oat_content=url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block border border-black text-black px-12 md:px-16 py-4 md:py-5 rounded-full font-bold text-xl md:text-2xl hover:bg-black hover:text-white transition"
+          >
+            LINEで応募する▶︎
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+

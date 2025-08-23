@@ -4,20 +4,24 @@
 
 <!-- モバイル専用レイアウト -->
 <div class="block lg:hidden hero-section-mobile">
-  <div class="relative z-20 container-custom py-8 sm:py-12 h-full flex items-center">
-    <div class="text-center space-y-8">
+  <!-- 背景動画 -->
+  <video class="hero-video" src="/hero.mp4" autoplay muted loop playsinline></video>
+  <div class="hero-overlay"></div>
+  <div class="relative container-custom py-8 sm:py-12 h-full flex items-center hero-content">
+    <div class="text-left space-y-8 w-full">
       <div class="space-y-6">
-        <h1 class="text-3xl sm:text-4xl font-bold leading-tight text-white">
-          次世代広告"SNS"で、<br />
-          貴社に影響力を。
+        <h1 class="text-4xl sm:text-5xl font-bold leading-tight text-white">
+          次世代広告"SNS"で、貴社に影響力を。
         </h1>
         
-        <div class="bg-white text-blue-900 px-4 sm:px-6 py-2 sm:py-3 rounded-lg inline-block font-bold text-base sm:text-lg">
+        <span class="highlight inline-block font-bold text-lg sm:text-xl text-white">
           日本全国｜TikTok運用代行ならBuzzLiminal
-        </div>
+        </span>
       </div>
 
       <!-- モバイル用スマホ画像 -->
+      <!-- 画像は差し替えのため一旦非表示 -->
+      <!--
       <div class="flex justify-center">
         <div class="w-48 h-72 bg-white rounded-3xl shadow-2xl p-4 transform rotate-12">
           <div class="w-full h-full bg-black rounded-2xl flex items-center justify-center">
@@ -25,12 +29,14 @@
           </div>
         </div>
       </div>
+      -->
 
+      <!-- CTAを下中央に配置 -->
       <div class="flex justify-center">
-        <button class="text-white font-bold text-lg sm:text-xl px-8 sm:px-12 py-3 sm:py-4 rounded-full transition-all duration-200 hover:scale-105 flex items-center space-x-3 cursor-pointer" style="background-color: #03C755;">
+        <a href="https://line.me/R/ti/p/@792kbrnd?ts=02241454&oat_content=url" class="text-white font-bold text-lg sm:text-xl px-8 sm:px-12 py-3 sm:py-4 rounded-full transition-all duration-200 hover:scale-105 flex items-center space-x-3 cursor-pointer" style="background-color: #03C755; position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%);" target="_blank" rel="noopener noreferrer">
           <img src="/LINE_Brand_icon.png" alt="LINE" class="w-5 h-5 sm:w-6 sm:h-6" />
-          <span>LINE相談はこちら</span>
-        </button>
+          <span>LINE相談をする▶︎</span>
+        </a>
       </div>
     </div>
   </div>
@@ -38,42 +44,32 @@
 
 <!-- デスクトップ専用レイアウト -->
 <div class="hidden lg:block hero-section-desktop">
-  <div class="relative z-20 container-custom h-full flex items-center">
-    <div class="grid grid-cols-2 gap-12 items-center w-full px-8">
+  <!-- 背景動画 -->
+  <video class="hero-video" src="/hero.mp4" autoplay muted loop playsinline></video>
+  <div class="hero-overlay"></div>
+  <div class="relative container-custom h-full flex items-center hero-content">
+    <div class="w-full">
       <!-- 左側：テキストコンテンツ -->
-      <div class="space-y-8 text-white ml-16">
+      <div class="space-y-8 text-white">
         <div class="space-y-8">
-          <p class="text-base leading-relaxed">
+          <p class="text-lg md:text-xl leading-relaxed">
             SNSで新たな発見を。貴社のサービスや魅力を、届けるべき人に届けます。
           </p>
           
-          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            次世代広告"SNS"で、<br />
-            貴社に影響力を。
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            次世代広告"SNS"で、貴社に影響力を。
           </h1>
           
-          <div class="bg-white text-blue-900 px-6 py-3 rounded-lg inline-block font-bold text-lg">
+          <span class="highlight inline-block font-bold text-xl md:text-2xl text-white">
             日本全国｜TikTok運用代行ならBuzzLiminal
-          </div>
+          </span>
         </div>
 
-        <div class="flex justify-start">
-          <button class="text-white font-bold text-xl px-12 py-4 rounded-full transition-all duration-200 hover:scale-105 flex items-center space-x-3 cursor-pointer" style="background-color: #03C755;">
+        <div class="flex justify-center">
+          <a href="https://line.me/R/ti/p/@792kbrnd?ts=02241454&oat_content=url" class="text-white font-bold text-xl px-12 py-4 rounded-full transition-all duration-200 hover:scale-105 flex items-center space-x-3 cursor-pointer" style="background-color: #03C755; position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%);" target="_blank" rel="noopener noreferrer">
             <img src="/LINE_Brand_icon.png" alt="LINE" class="w-6 h-6" />
-            <span>LINE相談はこちら</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- 右側：スマホ画像 -->
-      <div class="relative flex justify-center">
-        <div class="relative">
-          <!-- スマホの画像はここに実際の画像を配置 -->
-          <div class="w-64 h-96 bg-white rounded-3xl shadow-2xl p-4 transform rotate-12">
-            <div class="w-full h-full bg-black rounded-2xl flex items-center justify-center">
-              <div class="text-white text-6xl">📱</div>
-            </div>
-          </div>
+            <span>LINE相談をする▶︎</span>
+          </a>
         </div>
       </div>
     </div>
@@ -84,7 +80,8 @@
   /* モバイル専用スタイル */
   .hero-section-mobile {
     position: relative;
-    background-image: url('/scramble.jpg');
+    background-image: none;
+    background-color: #001B2E;
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -95,51 +92,31 @@
     justify-content: center;
   }
 
-  .hero-section-mobile::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(59, 130, 246, 0.7); /* 青いオーバーレイ（濃く） */
-    z-index: 1;
-  }
+  /* オーバーレイ無効（画像を外したため） */
+  .hero-section-mobile::before { display: none; }
 
-  .hero-section-mobile > * {
-    position: relative;
-    z-index: 2;
-  }
+  /* テキストラッパーのみ前面に */
+  .hero-content { position: relative; z-index: 2; }
 
   /* デスクトップ専用スタイル */
   .hero-section-desktop {
     position: relative;
-    background-image: url('/scramble.jpg');
+    background-image: none;
+    background-color: #001B2E;
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    margin-top: 128px;
-    height: 570px;
+    margin-top: 0;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .hero-section-desktop::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(59, 130, 246, 0.7);
-    z-index: 1;
-  }
+  /* オーバーレイ無効（画像を外したため） */
+  .hero-section-desktop::before { display: none; }
 
-  .hero-section-desktop > * {
-    position: relative;
-    z-index: 2;
-  }
+  /* 子要素一括指定は撤去（videoが相対配置化してしまうため） */
 
   /* 強制的な表示制御 */
   @media (min-width: 1024px) {
@@ -152,5 +129,32 @@
     .hero-section-desktop {
       display: none !important;
     }
+  }
+
+  /* ハイライト用スタイル */
+  .highlight {
+    background-image: linear-gradient(transparent 60%, rgba(4, 27, 42, 0.9) 60%);
+    padding: 2px 4px;
+  }
+
+  /* 背景動画を常に全面表示 */
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    background-color: #001B2E; /* 未ロード時/再生不可時の背景色 */
+  }
+
+  /* 動画とテキストの間の半透明オーバーレイ */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
   }
 </style>

@@ -1,43 +1,113 @@
-# Astro Starter Kit: Minimal
+# BuzzLiminal ホームページ
 
-```sh
-npm create astro@latest -- --template minimal
+BuzzLiminalの公式ホームページです。Astro + Tailwind CSS 4を使用して構築されています。
+
+## 技術スタック
+
+- **フレームワーク**: Astro 5.12.8
+- **CSS**: Tailwind CSS 4.1.11
+- **言語**: TypeScript
+- **ビルドツール**: Vite
+
+## 前提条件
+
+- Node.js 18.0.0以上
+- npm 9.0.0以上
+
+## セットアップ手順
+
+### 1. リポジトリのクローン
+
+```bash
+git clone <repository-url>
+cd BuzzLiminal_HP
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### 2. 依存関係のインストール
 
-## 🚀 Project Structure
+```bash
+npm install
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+### 3. 開発サーバーの起動
 
-```text
-/
-├── public/
+```bash
+npm run dev
+```
+
+開発サーバーは `http://localhost:4321` で起動します。
+
+## 利用可能なスクリプト
+
+- `npm run dev` - 開発サーバーを起動
+- `npm run build` - プロダクションビルドを実行
+- `npm run preview` - ビルドされたファイルをプレビュー
+
+## プロジェクト構造
+
+```
+BuzzLiminal_HP/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/     # Astroコンポーネント
+│   ├── layouts/        # レイアウトコンポーネント
+│   ├── pages/          # ページコンポーネント
+│   └── styles/         # グローバルスタイル
+├── public/             # 静的アセット
+├── dist/               # ビルド出力（生成される）
+└── astro.config.mjs    # Astro設定ファイル
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## ビルド
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+プロダクション用のビルドを実行するには：
 
-Any static assets, like images, can be placed in the `public/` directory.
+```bash
+npm run build
+```
 
-## 🧞 Commands
+ビルドされたファイルは `dist/` ディレクトリに出力されます。
 
-All commands are run from the root of the project, from a terminal:
+## トラブルシューティング
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### Rollupのネイティブモジュールエラーが発生する場合
 
-## 👀 Want to learn more?
+ARM64アーキテクチャ（Apple Silicon）でよく発生する問題です。以下の手順で解決できます：
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+rm -rf package-lock.json node_modules
+npm install
+```
+
+### 新しいターミナルセッションでnpmコマンドが見つからない場合
+
+新しいターミナルを開いた際に `zsh: command not found: npm` エラーが発生する場合、以下の手順で解決できます：
+
+```bash
+# HomebrewのPATHを設定
+export PATH="/opt/homebrew/bin:$PATH"
+
+# または、永続的に設定する場合
+echo 'export PATH="/opt/homebrew/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+### 開発サーバーが起動しない場合
+
+1. 依存関係が正しくインストールされているか確認：
+   ```bash
+   npm install
+   ```
+
+2. ポート4321が使用中でないか確認：
+   ```bash
+   lsof -i :4321
+   ```
+
+3. 必要に応じてプロセスを終了：
+   ```bash
+   pkill -f "astro dev"
+   ```
+
+## ライセンス
+
+このプロジェクトはBuzzLiminalの所有物です。

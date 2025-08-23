@@ -1,258 +1,148 @@
 ---
-// ヘッダーコンポーネント（モバイル最適化版）
+// ヘッダーコンポーネント（新デザイン）
+const currentPath = Astro.url.pathname;
+const isHomeActive = currentPath === '/';
+const isServiceActive = currentPath.startsWith('/service');
+const isWorksActive = currentPath.startsWith('/works');
+const isCompanyActive = currentPath.startsWith('/company');
+const isRecruitActive = currentPath.startsWith('/recruit');
 ---
 
-<header class="bg-gray-900 text-white fixed top-0 left-0 right-0 z-50">
-  <!-- モバイル用ヘッダー -->
-  <div class="block lg:hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <!-- 左側：ハンバーガーメニュー -->
-        <button class="pl-2 pr-3 py-2 text-white" id="hamburger-button">
-          <svg class="w-6 h-6 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="hamburger-icon">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" id="hamburger-lines"></path>
-          </svg>
-        </button>
+<header class="fixed top-0 left-0 right-0 z-20 bg-[#041b2a] text-white header-fade">
+  <div class="relative mx-auto max-w-[1400px] px-4 lg:px-8 py-2">
+    <!-- 上段：ロゴ / CTA or ハンバーガー（高さ固定） -->
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- 左：ロゴ -->
+      <a href="/" class="shrink-0 pl-2 flex items-center">
+        <img src="/logo.png" onerror="this.onerror=null;this.src='/favicon.svg'" alt="BuzzLiminal Logo" class="h-10 w-auto" />
+      </a>
 
-        <!-- 中央：ロゴ -->
-        <div class="flex items-center space-x-3">
-          <div class="w-8 h-8 bg-blue-400 rounded-lg flex items-center justify-center">
-            <div class="text-white text-lg font-bold">B</div>
-          </div>
-          <span class="text-2xl font-bold text-blue-300 tracking-wider">BuzzLiminal</span>
-        </div>
+      <!-- 右：LINEボタン（モバイル非表示） -->
+      <a href="https://line.me/R/ti/p/@792kbrnd?ts=02241454&oat_content=url" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex pr-2 items-center rounded-full px-8 md:px-10 py-3 bg-[#12cf3d] text-white font-bold shadow-md transition-transform duration-200 hover:scale-105">
+        <img src="/LINE_Brand_icon.png" alt="LINE" class="w-5 h-5 mr-2" />
+        <span>LINE相談をする▶︎</span>
+      </a>
 
-        <!-- 右側：LINEボタン -->
-        <button class="hidden sm:flex text-white px-4 py-2 rounded-lg items-center space-x-2 transition-all duration-200 hover:scale-105 cursor-pointer" style="background-color: #03C755;">
-          <img src="/LINE_Brand_icon.png" alt="LINE" class="w-4 h-4" />
-          <span class="text-sm">LINE相談</span>
-        </button>
-      </div>
+      <!-- モバイル：ハンバーガー（右端） -->
+      <button class="md:hidden ml-auto pr-2 inline-flex items-center justify-center w-10 h-10 rounded" aria-controls="mobile-nav" aria-expanded="false" data-nav-toggle>
+        <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
     </div>
+
+    <!-- 下段：ナビ（最大幅では中央に絶対配置、それ未満は下段に表示） -->
+    <nav class="hidden md:block nav-wide mt-2">
+      <ul class="flex items-center justify-center gap-10 xl:gap-14 text-lg md:text-xl font-semibold gnav-list">
+        <li><a href="/" class={`relative inline-flex items-center px-2 py-3 text-white/90 hover:text-white transition-colors ${isHomeActive ? 'is-active' : ''}`}>Home</a></li>
+        <li><a href="/service" class={`relative inline-flex items-center px-2 py-3 text-white/90 hover:text-white transition-colors ${isServiceActive ? 'is-active' : ''}`}>Service</a></li>
+        <li><a href="/works" class={`relative inline-flex items-center px-2 py-3 text-white/90 hover:text-white transition-colors ${isWorksActive ? 'is-active' : ''}`}>Works</a></li>
+        <li><a href="/company" class={`relative inline-flex items-center px-2 py-3 text-white/90 hover:text-white transition-colors ${isCompanyActive ? 'is-active' : ''}`}>Company</a></li>
+        <li><a href="/recruit" class={`relative inline-flex items-center px-2 py-3 text-white/90 hover:text-white transition-colors ${isRecruitActive ? 'is-active' : ''}`}>Recruit</a></li>
+      </ul>
+    </nav>
   </div>
 
-  <!-- デスクトップ用ヘッダー -->
-  <div class="hidden lg:block">
-    <!-- 上段：ロゴ・スローガン・連絡先情報 -->
-    <div class="bg-gray-900 text-white">
-      <div class="container-custom">
-                 <div class="flex items-center justify-between h-18 px-8">
-                                                                               <!-- 左側：ロゴ -->
-                     <div class="flex items-center space-x-3">
-                       <div class="w-8 h-8 bg-blue-400 rounded-lg flex items-center justify-center">
-                         <div class="text-white text-lg font-bold">B</div>
-                       </div>
-                       <span class="text-4xl font-bold text-blue-300 tracking-wider">BuzzLiminal</span>
-                     </div>
-                     
-                                                                                 <!-- 中央：スローガン -->
-                       <div class="hidden md:block text-sm text-left mr-auto ml-6">
-                         <div>日本全国 | TikTok運用代行なら</div>
-                         <div class="font-bold">BuzzLiminal</div>
-                       </div>
-
-                   <!-- 右側：連絡先情報 -->
-                   <div class="flex items-center space-x-6">
-            <!-- 電話番号 -->
-            <div class="hidden lg:flex items-center space-x-3">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-              </svg>
-              <div class="text-center">
-                <div class="font-bold text-2xl text-white">090-9950-1315</div>
-                <div class="text-blue-200 text-xs">受付時間 10:00-20:00</div>
-              </div>
-            </div>
-            
-            <!-- LINEボタン -->
-            <button class="text-white px-6 py-3 rounded-lg flex items-center space-x-2 transition-all duration-200 hover:scale-105 cursor-pointer" style="background-color: #03C755;">
-              <img src="/LINE_Brand_icon.png" alt="LINE" class="w-5 h-5" />
-              <span class="text-base">LINE相談</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 下段：ナビゲーションメニュー -->
-    <div class="bg-gray-900 text-white">
-      <div class="container-custom">
-        <div class="flex items-center justify-center h-14 px-8">
-          <!-- ナビゲーション -->
-          <nav class="flex space-x-24">
-            <a href="/" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">Home</a>
-            <a href="/service" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">Service</a>
-            <a href="/company" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">Company</a>
-            <a href="/works" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">Works</a>
-            <a href="#recruit" class="text-gray-300 hover:text-white transition-colors duration-200 text-base">Recruit</a>
-          </nav>
-        </div>
-      </div>
-    </div>
+  <!-- モバイルナビ（ドロップダウン） -->
+  <div id="mobile-nav" class="md:hidden hidden absolute left-0 right-0 top-full bg-[#041b2a] border-t border-white/10">
+    <ul class="py-2">
+      <li><a href="/" class="block px-4 py-3 text-white/90 hover:text-white">Home</a></li>
+      <li><a href="/service" class="block px-4 py-3 text-white/90 hover:text-white">Service</a></li>
+      <li><a href="/works" class="block px-4 py-3 text-white/90 hover:text-white">Works</a></li>
+      <li><a href="/company" class="block px-4 py-3 text-white/90 hover:text-white">Company</a></li>
+      <li><a href="/recruit" class="block px-4 py-3 text-white/90 hover:text-white">Recruit</a></li>
+    </ul>
   </div>
-
-  <!-- ハンバーガーメニュー -->
-  <div class="hidden" id="hamburger-menu">
-    <div class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-xl z-40" id="menu-overlay"></div>
-    
-    <div class="fixed top-0 left-0 h-full w-full max-w-md bg-white z-50 transform -translate-x-full transition-all duration-700 ease-out" id="menu-content">
-      <!-- メニューヘッダー -->
-      <div class="flex items-center justify-between p-6 border-b border-gray-100">
-        <div class="flex items-center space-x-3">
-          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <div class="text-white text-lg font-bold">B</div>
-          </div>
-          <span class="text-xl font-bold text-gray-900">BuzzLiminal</span>
-        </div>
-        <button class="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200" id="close-menu-button">
-          <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-
-      <!-- ナビゲーション -->
-      <div class="p-6">
-        <nav class="space-y-1">
-          <a href="/" class="group flex items-center px-4 py-4 text-lg font-medium text-gray-900 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-300 transform hover:translate-x-2">
-            <span>Home</span>
-            <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </div>
-          </a>
-          
-          <a href="/service" class="group flex items-center px-4 py-4 text-lg font-medium text-gray-900 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-300 transform hover:translate-x-2">
-            <span>Service</span>
-            <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </div>
-          </a>
-          
-          <a href="/company" class="group flex items-center px-4 py-4 text-lg font-medium text-gray-900 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-300 transform hover:translate-x-2">
-            <span>Company</span>
-            <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </div>
-          </a>
-          
-          <a href="/works" class="group flex items-center px-4 py-4 text-lg font-medium text-gray-900 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-300 transform hover:translate-x-2">
-            <span>Works</span>
-            <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </div>
-          </a>
-          
-          <a href="#recruit" class="group flex items-center px-4 py-4 text-lg font-medium text-gray-900 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-300 transform hover:translate-x-2">
-            <span>Recruit</span>
-            <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </div>
-          </a>
-          
-
-        </nav>
-      </div>
-
-      <!-- フッター -->
-      <div class="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-100 bg-gray-50">
-        <div class="text-center">
-          <p class="text-sm text-gray-500">© 2024 BuzzLiminal</p>
-          <p class="text-xs text-gray-400 mt-1">All rights reserved</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
+</header> 
+<style>
+  /* アクティブ三角インジケータ */
+  .is-active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -6px; /* バー外に少し出す */
+    width: 0; height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #2A41A8; /* 濃い側のブルーに合わせる */
+    z-index: 2;
+  }
+</style>
 <script>
-  // ハンバーガーメニューの切り替え
-  const hamburgerButton = document.getElementById('hamburger-button');
-  const hamburgerMenu = document.getElementById('hamburger-menu');
-  const menuContent = document.getElementById('menu-content');
-  const closeMenuButton = document.getElementById('close-menu-button');
-  const hamburgerIcon = document.getElementById('hamburger-icon');
-  let isMenuOpen = false;
+  // スクロール方向でヘッダーをフェード（累積式）
+  const initHeaderFade = () => {
+    const header = document.querySelector<HTMLElement>('.header-fade');
+    if (!header || header.dataset.fadeInit === '1') return;
+    header.dataset.fadeInit = '1';
 
-  if (hamburgerButton && hamburgerMenu && menuContent && hamburgerIcon) {
-    // メニューを開く
-    hamburgerButton.addEventListener('click', () => {
-      openMenu();
-    });
+    let lastY: number = window.scrollY;
+    let progress: number = 0; // 0: 表示, 1: 完全に隠す
+    let rafId: number = 0;
+    const clamp = (v: number, min: number, max: number): number => Math.min(Math.max(v, min), max);
+    const sensitivityPx = 400; // どれくらいスクロールで全隠れするか
+    const minOpacity = 0.0; // ある程度下で完全に透明にする
 
-    // 閉じるボタンでメニューを閉じる
-    if (closeMenuButton) {
-      closeMenuButton.addEventListener('click', () => {
-        closeMenu();
+    const apply = () => {
+      const op = 1 - progress * (1 - minOpacity);
+      header.style.opacity = String(op);
+      header.style.transform = `translateY(${progress * 10}px)`; // スライド量を減らす
+      rafId = 0;
+    };
+
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        const currentY = window.scrollY;
+        const deltaPx = currentY - lastY;
+        // 小さなスクロールは無視してクリック時の違和感を軽減
+        if (Math.abs(deltaPx) < 2) { rafId = 0; return; }
+        progress = clamp(progress + deltaPx / sensitivityPx, 0, 1);
+        lastY = currentY;
+        apply();
       });
-    }
+    };
 
-    // 背景クリックでメニューを閉じる
-    const menuOverlay = document.getElementById('menu-overlay');
-    if (menuOverlay) {
-      menuOverlay.addEventListener('click', () => {
-        closeMenu();
-      });
-    }
+    // 初期適用
+    apply();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  };
 
-    // ESCキーでメニューを閉じる
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && isMenuOpen) {
-        closeMenu();
-      }
+  // さまざまな読み込みパスで初期化
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeaderFade, { once: true });
+  } else {
+    initHeaderFade();
+  }
+  document.addEventListener('astro:page-load', initHeaderFade);
+  
+  // モバイルナビのトグル
+  const initMobileNav = () => {
+    const toggle = document.querySelector('[data-nav-toggle]');
+    const panel = document.getElementById('mobile-nav');
+    if (!toggle || !panel) return;
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      panel.classList.toggle('hidden', expanded);
     });
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileNav, { once: true });
+  } else {
+    initMobileNav();
   }
+  document.addEventListener('astro:page-load', initMobileNav);
+</script>
 
-  function openMenu() {
-    const hamburgerMenu = document.getElementById('hamburger-menu');
-    const menuContent = document.getElementById('menu-content');
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    
-    if (hamburgerMenu && menuContent && hamburgerIcon) {
-      hamburgerMenu.classList.remove('hidden');
-      isMenuOpen = true;
-      
-      // アイコンをXマークに変更
-      hamburgerIcon.innerHTML = `
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-      `;
-      
-      // 少し遅延させてからアニメーション開始
-      setTimeout(() => {
-        menuContent.classList.remove('-translate-x-full');
-      }, 10);
-    }
+<style>
+  .header-fade { transition: opacity 180ms ease, transform 180ms ease; will-change: opacity, transform; }
+  /* 最大幅時はナビを上段の中央に重ねる */
+  .nav-wide { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: auto; }
+  @media (max-width: 1399px) {
+    /* 少しでも狭い場合は下段へ移し、左右中央寄せで幅いっぱい */
+    .nav-wide { position: static; transform: none; margin-top: 8px; width: 100%; }
   }
-
-  function closeMenu() {
-    const menuContent = document.getElementById('menu-content');
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    
-    if (menuContent && hamburgerIcon) {
-      menuContent.classList.add('-translate-x-full');
-      isMenuOpen = false;
-      
-      // アイコンを三本線に戻す
-      hamburgerIcon.innerHTML = `
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-      `;
-      
-      // アニメーション完了後にメニューを非表示
-      setTimeout(() => {
-        const hamburgerMenu = document.getElementById('hamburger-menu');
-        if (hamburgerMenu) {
-          hamburgerMenu.classList.add('hidden');
-        }
-      }, 700);
-    }
-  }
-</script> 
+</style>

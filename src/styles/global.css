@@ -15,6 +15,34 @@
 }
 
 @layer components {
+  /* Site-wide typography (aligned with Home Service/Works) */
+  .typography-title {
+    @apply text-5xl font-extrabold text-gray-900;
+  }
+  .typography-subtitle {
+    @apply text-lg text-gray-600;
+  }
+  .typography-heading {
+    @apply text-2xl font-bold text-gray-900;
+  }
+  .typography-body {
+    @apply text-base text-gray-700 leading-relaxed;
+  }
+
+  .typography-standard h2 {
+    @apply text-5xl font-extrabold text-gray-900;
+  }
+  .typography-standard h3 {
+    @apply text-2xl font-bold text-gray-900;
+  }
+  .typography-standard p {
+    @apply text-base text-gray-700 leading-relaxed;
+  }
+
+  /* 小見出し（h2直下の説明行）をHome Service準拠(18px/ノンボールド)に統一 */
+  .typography-standard h2 + p {
+    @apply text-lg text-gray-600 font-normal;
+  }
   .btn-primary {
     @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-colors duration-200 text-sm sm:text-base;
   }
@@ -29,13 +57,6 @@
   
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-
-  .hero-bg {
-    background-image: url('/scramble.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
   }
 
   .hero-bg-test {

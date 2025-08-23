@@ -4,34 +4,26 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Company - BuzzLiminal">
-  <!-- ヒーローセクション -->
-  <section class="bg-gradient-to-br from-blue-900 to-indigo-900 text-white py-8 sm:py-16 md:py-20 hero-hero-section">
-    <div class="container-custom">
-      <div class="text-center">
+  <!-- ヒーローセクション（背景画像+オーバーレイ+固定高さ） -->
+  <section class="relative pt-32 lg:pt-40">
+    <div class="absolute inset-0 bg-[url('/company_hero.jpg')] bg-cover bg-center"></div>
+    <div class="absolute inset-0" style="background: rgba(0,27,46,0.5);"></div>
+    <div class="relative container-custom h-[300px] flex items-center justify-center text-center">
+      <div class="text-white">
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6">Company</h1>
-        <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-200">会社概要</p>
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90">会社概要</p>
       </div>
     </div>
   </section>
 
-  <style>
-    .hero-hero-section {
-      margin-top: 64px; /* モバイル用：ヘッダーとの間隔を広げる */
-    }
-    
-    @media (min-width: 1024px) {
-      .hero-hero-section {
-        margin-top: 128px; /* デスクトップ用 */
-      }
-    }
-  </style>
+  
 
   <!-- Profile セクション -->
-  <section class="section-padding bg-white">
+  <section class="section-padding bg-white typography-standard">
     <div class="container-custom">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Profile</h2>
-        <h3 class="text-2xl font-bold text-gray-800 mb-8">会社概要</h3>
+      <div class="text-left mb-16">
+        <h2 class="text-5xl font-extrabold text-gray-900 mb-2">Profile</h2>
+        <h3 class="text-lg font-normal text-gray-600 mb-8">会社概要</h3>
       </div>
       
       <div class="max-w-4xl mx-auto">
@@ -71,17 +63,17 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Access セクション -->
-  <section class="section-padding bg-gray-50">
+  <section class="section-padding bg-gray-50 typography-standard">
     <div class="container-custom">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Access</h2>
-        <h3 class="text-2xl font-bold text-gray-800 mb-8">アクセス情報</h3>
+      <div class="text-left mb-16">
+        <h2 class="text-5xl font-extrabold text-gray-900 mb-2">Access</h2>
+        <h3 class="text-lg font-normal text-gray-600 mb-8">アクセス情報</h3>
       </div>
       
       <div class="max-w-4xl mx-auto">
         <!-- Googleマップ -->
         <div class="bg-white rounded-2xl shadow-xl p-8">
-          <h4 class="text-xl font-bold text-gray-900 mb-6">地図</h4>
+          <h4 class="text-xl text-gray-900 mb-6">■ JR横浜線 町田駅より徒歩2分</h4>
           <div class="w-full h-64 rounded-lg overflow-hidden shadow-lg">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.1234567890123!2d139.45678901234567!3d35.67890123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQwJzQyLjAiTiAxMznCsDI3JzI0LjQiRQ!5e0!3m2!1sja!2sjp!4v1234567890123"
@@ -93,16 +85,7 @@ import Layout from '../layouts/Layout.astro';
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
-          <div class="mt-6 text-center">
-            <a 
-              href="https://maps.google.com/?q=東京都町田市原町田1-2-11+グラディート町田804" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
-              <span class="mr-2">🗺️</span>
-              Googleマップで開く
-            </a>
-          </div>
+          
         </div>
       </div>
     </div>

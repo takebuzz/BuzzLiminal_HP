@@ -2,151 +2,35 @@
 // Serviceセクションコンポーネント
 ---
 
-<section class="service-section">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- モバイル専用レイアウト -->
-    <div class="block lg:hidden service-section-mobile">
-      <!-- ヘッダーセクション -->
-      <div class="text-center mb-8 sm:mb-12">
-        <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">Service</h2>
-        <div class="inline-block border-l-4 border-blue-400 pl-4 sm:pl-6 text-left">
-          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">
-            次世代広告"SNS"で、
-          </h3>
-          <h4 class="text-lg sm:text-xl font-bold text-gray-700">
-            貴社に<span class="text-blue-600">影響力</span>を。
-          </h4>
-        </div>
-      </div>
+<section id="service" class="bg-white py-24 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <!-- 見出し -->
+    <h2 class="text-5xl font-extrabold mb-2">Service</h2>
+    <p class="text-lg text-gray-600 mb-12">サービス一覧</p>
 
-      <!-- 本文部分 -->
-      <div class="space-y-4 sm:space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed mb-8 sm:mb-12">
-        <p class="text-center sm:text-left">
-          現代のマーケティングにおいて、SNSは欠かせない存在となっています。
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- 左テキスト -->
+      <div>
+        <h3 class="text-2xl font-bold mb-4">TikTok運用プラン</h3>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          TikTokに関する知識がなくても、安心してお任せいただけます。貴社のTikTokアカウントを、企画立案から撮影、編集、投稿管理、分析まで一括で運用。SNSマーケティングを駆使し、集客や採用の成果につなげます。
         </p>
-        <p class="text-center sm:text-left">
-          特にTikTokは、Z世代を中心に爆発的な人気を誇り、
-        </p>
-        <p class="text-center sm:text-left">
-          企業のブランド認知度向上に大きな効果を発揮します。
-        </p>
-        <div class="bg-blue-50 p-4 sm:p-6 rounded-xl border-l-4 border-blue-400">
-          <p class="font-bold text-blue-600 text-center sm:text-left">
-            私たちは、TikTok運用のプロフェッショナルとして、
-          </p>
-          <p class="text-center sm:text-left">
-            貴社のサービスや商品を効果的に発信し、
-          </p>
-          <p class="text-center sm:text-left">
-            ターゲット層への確実なリーチを実現します。
-          </p>
-        </div>
-      </div>
-
-      <!-- ボタン -->
-      <div class="text-center">
-        <a href="/service" class="inline-flex items-center px-8 sm:px-10 py-4 sm:py-5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl">
-          <span>サービス詳細へ</span>
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
+        <a
+          href="/service"
+          class="inline-block border border-black text-black px-6 py-3 rounded-full font-medium hover:bg-black hover:text-white transition"
+        >
+          サービス詳細へ →
         </a>
       </div>
-    </div>
 
-    <!-- デスクトップ専用レイアウト（既存のまま） -->
-    <div class="hidden lg:block service-section-desktop">
-      <div class="grid grid-cols-2 gap-12 items-center">
-        <!-- 画像セクション -->
-        <div class="mr-16 justify-start">
-          <div class="relative">
-            <img src="/scramble.jpg" alt="Service" class="w-full h-auto rounded-lg shadow-lg" />
-          </div>
-        </div>
-
-        <!-- テキストコンテンツ -->
-        <div class="max-w-xl ml-16 text-left">
-          <!-- タイトル部分 -->
-          <div class="mb-8">
-            <h2 class="text-5xl font-bold text-gray-900 mb-6">Service</h2>
-            <div class="border-l-4 border-blue-400 pl-6">
-              <h3 class="text-3xl font-bold text-gray-800 mb-3">
-                次世代広告"SNS"で、
-              </h3>
-              <h4 class="text-2xl font-bold text-gray-700">
-                貴社に<span class="text-blue-600">影響力</span>を。
-              </h4>
-            </div>
-          </div>
-
-          <!-- 本文部分 -->
-          <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
-            <p>
-              現代のマーケティングにおいて、SNSは欠かせない存在となっています。
-            </p>
-            <p>
-              特にTikTokは、Z世代を中心に爆発的な人気を誇り、
-            </p>
-            <p>
-              企業のブランド認知度向上に大きな効果を発揮します。
-            </p>
-            <p class="font-bold text-blue-600">
-              私たちは、TikTok運用のプロフェッショナルとして、
-            </p>
-            <p>
-              貴社のサービスや商品を効果的に発信し、
-            </p>
-            <p>
-              ターゲット層への確実なリーチを実現します。
-            </p>
-          </div>
-
-          <!-- ボタン -->
-          <div class="mt-10">
-            <a href="/service" class="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl">
-              <span>サービス詳細へ</span>
-              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
+      <!-- 右画像 -->
+      <div class="w-full">
+        <img
+          src="/tiktok.jpg"
+          alt="サービスイメージ"
+          class="rounded-lg shadow-lg w-full h-auto"
+        />
       </div>
     </div>
   </div>
-</section>
-
-<style>
-  /* Serviceセクション共通スタイル */
-  .service-section {
-    background-color: white;
-  }
-
-  /* モバイル専用スタイル */
-  .service-section-mobile {
-    padding: 2rem 0;
-  }
-
-  @media (min-width: 640px) {
-    .service-section-mobile {
-      padding: 3rem 0;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .service-section-mobile {
-      padding: 4rem 0;
-    }
-  }
-
-  /* デスクトップ専用スタイル */
-  .service-section-desktop {
-    padding: 4rem 0;
-  }
-
-  @media (min-width: 1024px) {
-    .service-section-desktop {
-      padding: 6rem 0;
-    }
-  }
-</style> 
+</section> 

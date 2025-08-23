@@ -2,90 +2,30 @@
 // Worksセクションコンポーネント
 ---
 
-<section class="works-section">
-  <div class="container-custom">
-    <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-      <!-- 左側：テキストコンテンツ -->
-      <div class="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-        <!-- タイトル部分 -->
-        <div class="mb-6 lg:mb-8">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 lg:mb-6">Works</h2>
-          <p class="text-xl text-gray-600">ご利用実績について</p>
-        </div>
-
-        <!-- 本文部分 -->
-        <div class="space-y-4 lg:space-y-6 text-lg text-gray-700 leading-relaxed">
-          <p class="font-bold text-blue-600 text-xl">
-            圧倒的なコストパフォーマンス
-          </p>
-          
-          <p>
-            弊社代表は現役の慶應義塾大学生。
-          </p>
-          
-          <p>
-            Z世代ならではの視点を活かしたTikTokコンサルティングにより、Z世代の採用支援や求人コストの削減を実現します。
-          </p>
-          
-          <p>
-            また、弊社が運用を支援した飲食店では「TikTokを見て来店した顧客のみで満席」となる事例も生まれており、その費用対効果を多くの企業様に実感いただいています。
-          </p>
-        </div>
-      </div>
-
-      <!-- 右側：スマートフォン画面 -->
-      <div class="flex justify-center lg:justify-end">
-        <div class="flex items-center space-x-6 lg:space-x-8">
-          <!-- スマートフォン画面（2個） -->
-          <div class="grid grid-cols-2 gap-8 lg:gap-12">
-            <div class="w-32 h-48 lg:w-40 lg:h-64 bg-gray-200 flex items-center justify-center shadow-lg rounded-xl">
-              <div class="text-gray-500 text-center">
-                <div class="text-sm">実績画像</div>
-              </div>
-            </div>
-
-            <div class="w-32 h-48 lg:w-40 lg:h-64 bg-gray-200 flex items-center justify-center shadow-lg rounded-xl">
-              <div class="text-gray-500 text-center">
-                <div class="text-sm">実績画像</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 右矢印と「もっと見る」 -->
-          <div class="flex flex-col items-center space-y-2">
-            <a href="/works" class="group flex flex-col items-center space-y-2 hover:scale-105 transition-transform duration-200 cursor-pointer">
-              <div class="text-3xl lg:text-4xl text-gray-600 group-hover:text-blue-600 transition-colors duration-200">→</div>
-              <div class="text-xs lg:text-sm text-gray-600 group-hover:text-blue-600 font-medium transition-colors duration-200">詳細</div>
-            </a>
-          </div>
-        </div>
+<section id="works" class="bg-gray-50 py-24 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <!-- 左テキスト -->
+    <div>
+      <h2 class="text-5xl font-extrabold mb-2">Works</h2>
+      <p class="text-lg text-gray-600 mb-8">ご利用実績について</p>
+      <h3 class="text-2xl font-bold text-[#00142A] mb-4">圧倒的なコストパフォーマンス</h3>
+      <p class="text-gray-700 mb-4 leading-relaxed">
+        弊社代表は現役の慶應義塾大学生。<br />
+        Z世代ならではの視点を活かしたTikTokコンサルティングにより、<br />
+        Z世代の採用支援や求人コストの削減を実現します。
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        また、弊社が運用を支援した飲食店では「TikTokを見て来店した顧客のみで満席」となる事例も生まれており、<br />
+        その費用対効果を多くの企業様に実感いただいています。
+      </p>
+      <div class="mt-8">
+        <a href="/works" class="inline-block border border-black text-black px-6 py-3 rounded-full font-medium hover:bg-black hover:text-white transition">実績詳細へ →</a>
       </div>
     </div>
+
+    <!-- 右画像（最新1枚） -->
+    <div class="w-full">
+      <img src="/cafe.jpg" alt="実績画像（最新）" class="rounded-lg shadow-lg w-full h-auto" />
+    </div>
   </div>
-</section>
-
-<style>
-  /* Worksセクション共通スタイル */
-  .works-section {
-    background-color: rgb(249 250 251); /* bg-gray-50 */
-    padding: 1.5rem 0;
-  }
-
-  @media (min-width: 640px) {
-    .works-section {
-      padding: 2rem 0;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .works-section {
-      padding: 3rem 0;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .works-section {
-      padding: 4rem 0;
-    }
-  }
-</style> 
+</section> 
