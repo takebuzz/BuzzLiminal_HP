@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 
-# Sitemap: 正式ドメイン確定後に追記
-# Sitemap: https://example.com/sitemap-index.xml
+Sitemap: https://www.buzzliminal.co.jp/sitemap-index.xml
 
 
