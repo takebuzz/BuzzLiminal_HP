@@ -10,9 +10,10 @@ export interface Props {
   ogImage?: string;
   ogImageAlt?: string;
   twitterSite?: string; // e.g. @your_handle
+  useDynamicHeaderOffset?: boolean;
 }
 
-const { title, description = "SNS運用代行ならBuzzLiminal", robots = "index, follow", ogImage, ogImageAlt, twitterSite } = Astro.props;
+const { title, description = "SNS運用代行ならBuzzLiminal", robots = "index, follow", ogImage, ogImageAlt, twitterSite, useDynamicHeaderOffset = false } = Astro.props;
 
 // Derived values for SEO/OG/LD+JSON
 const currentUrl = Astro.url.href;
@@ -44,10 +45,8 @@ const isDefaultOg = !ogImage;
     <meta name="robots" content={robots} />
     <link rel="canonical" href={currentUrl} />
 
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <link rel="mask-icon" href="/favicon.svg" color="#041b2a" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#041b2a" />
@@ -143,9 +142,9 @@ const isDefaultOg = !ogImage;
       isPartOf: { '@type': 'WebSite', name: siteName, url: origin }
     })}</script>
   </head>
-  <body class="font-sans bg-white">
+  <body class="font-sans bg-white" data-dynamic-header={useDynamicHeaderOffset ? '1' : '0'}>
     <Header />
-    <main>
+    <main style={useDynamicHeaderOffset ? 'padding-top: var(--header-offset, 11rem)' : ''}>
       <slot />
     </main>
     <Footer />
@@ -158,6 +157,7 @@ const isDefaultOg = !ogImage;
     --accent-light: 224, 204, 250;
     --accent-dark: 49, 10, 101;
     --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+    --header-offset: 11rem;
   }
   
   html {

@@ -18,7 +18,7 @@ const isRecruitActive = currentPath.startsWith('/recruit');
       </a>
 
       <!-- 右：LINEボタン（モバイル非表示） -->
-      <a href="/contact" target="_self" rel="noopener" class="hidden md:inline-flex pr-2 items-center rounded-full px-8 md:px-10 py-3 bg-[#12cf3d] text-white font-bold shadow-md transition-transform duration-200 hover:scale-105">
+      <a href="https://line.me/R/ti/p/@792kbrnd?ts=02241454&oat_content=url" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex pr-2 items-center rounded-full px-8 md:px-10 py-3 bg-[#12cf3d] text-white font-bold shadow-md transition-transform duration-200 hover:scale-105">
         <img src="/LINE_Brand_icon.png" alt="LINE" class="w-5 h-5 mr-2" />
         <span>LINE相談をする▶︎</span>
       </a>
@@ -144,7 +144,46 @@ const isRecruitActive = currentPath.startsWith('/recruit');
   }
   document.addEventListener('astro:page-load', initMobileNav);
 </script>
-
+<script>
+  // ヘッダー実高さを測って CSS 変数に反映
+  const updateHeaderOffset = () => {
+    const header = document.querySelector<HTMLElement>('header.header-fade');
+    if (!header) return;
+    const rect = header.getBoundingClientRect();
+    // 下段ナビが絶対配置の場合はその高さも考慮
+    const nav = header.querySelector<HTMLElement>('nav.nav-wide');
+    let extra = 0;
+    if (nav) {
+      const style = window.getComputedStyle(nav);
+      const isAbsolute = style.position === 'absolute';
+      if (isAbsolute) {
+        const navRect = nav.getBoundingClientRect();
+        // ヘッダー内の中央重ね配置分を足し込む
+        extra = Math.max(0, navRect.height / 2);
+      }
+    }
+    const offsetPx = Math.ceil(rect.height + extra);
+    document.documentElement.style.setProperty('--header-offset', `${offsetPx}px`);
+  };
+  const initHeaderOffset = () => {
+    const enable = document.body.getAttribute('data-dynamic-header') === '1';
+    if (!enable) return;
+    updateHeaderOffset();
+    // リサイズ・フォントロード・画像ロード時に再計測
+    window.addEventListener('resize', updateHeaderOffset);
+    window.addEventListener('load', updateHeaderOffset, { once: true });
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeaderOffset, { once: true });
+  } else {
+    initHeaderOffset();
+  }
+  document.addEventListener('astro:page-load', () => {
+    const enable = document.body.getAttribute('data-dynamic-header') === '1';
+    if (!enable) return;
+    setTimeout(updateHeaderOffset, 0);
+  });
+</script>
 <style>
   .header-fade { transition: opacity 180ms ease, transform 180ms ease; will-change: opacity, transform; }
   /* 最大幅時はナビを上段の中央に重ねる */
