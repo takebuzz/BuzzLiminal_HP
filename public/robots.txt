@@ -1,6 +1,60 @@
+# Robots.txt for BuzzLiminal website
+# Updated: 2024
+
 User-agent: *
 Allow: /
 
+# Allow access to important directories
+Allow: /service/
+Allow: /works/
+Allow: /company/
+Allow: /recruit/
+
+# Disallow access to private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /logs/
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /.well-known/private/
+Disallow: /csp-report.php
+
+# Block specific file types from indexing
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.log$
+Disallow: /*.tmp$
+
+# Crawl delay for all bots (1 second)
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://www.buzzliminal.co.jp/sitemap-index.xml
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Block unwanted bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
 
 
