@@ -47,7 +47,8 @@ const isDefaultOg = !ogImage;
 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
-    <link rel="mask-icon" href="/favicon.svg" color="#041b2a" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#041b2a" />
 
@@ -84,7 +85,7 @@ const isDefaultOg = !ogImage;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    <script type="application/ld+json">{JSON.stringify({
+    <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: '株式会社BuzzLiminal',
@@ -95,9 +96,9 @@ const isDefaultOg = !ogImage;
         { '@type': 'PostalAddress', streetAddress: '神奈川県相模原市南区上鶴間本町3-10-2-602', addressCountry: 'JP' },
         { '@type': 'PostalAddress', streetAddress: '東京都町田市原町田1-2-11 グラディート町田804', addressCountry: 'JP' }
       ]
-    })}</script>
+    })} />
 
-    <script type="application/ld+json">{JSON.stringify({
+    <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: siteName,
@@ -107,9 +108,9 @@ const isDefaultOg = !ogImage;
         target: `${origin}/?q={search_term_string}`,
         'query-input': 'required name=search_term_string'
       }
-    })}</script>
+    })} />
 
-    <script type="application/ld+json">{JSON.stringify({
+    <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'ItemList',
       itemListElement: navItems.map((item, index) => ({
@@ -118,10 +119,10 @@ const isDefaultOg = !ogImage;
         name: item.name,
         url: `${origin}${item.path}`
       }))
-    })}</script>
+    })} />
 
     {Astro.url.pathname !== '/' && (
-      <script type="application/ld+json">{JSON.stringify({
+      <script type="application/ld+json" set:html={JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -130,17 +131,17 @@ const isDefaultOg = !ogImage;
             .filter(i => i.path === Astro.url.pathname)
             .map(i => ({ '@type': 'ListItem', position: 2, name: i.name, item: `${origin}${i.path}` }))
         ]
-      })}</script>
+      })} />
     )}
 
-    <script type="application/ld+json">{JSON.stringify({
+    <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'WebPage',
       name: title,
       description,
       url: currentUrl,
       isPartOf: { '@type': 'WebSite', name: siteName, url: origin }
-    })}</script>
+    })} />
   </head>
   <body class="font-sans bg-white" data-dynamic-header={useDynamicHeaderOffset ? '1' : '0'}>
     <Header />
