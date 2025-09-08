@@ -1,4 +1,4 @@
-# Xserver (Apache) .htaccess for security, caching, redirects
+# Xserver (Apache) .htaccess - Simplified for static hosting
 
 # Force HTTPS redirect (if not already handled by Xserver)
 <IfModule mod_rewrite.c>
@@ -7,37 +7,11 @@
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 </IfModule>
 
+# Basic security headers
 <IfModule mod_headers.c>
-  # Security headers - multiple directive formats for better compatibility
-  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-  Header append Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-
   Header always set X-Content-Type-Options "nosniff"
-  Header set X-Content-Type-Options "nosniff"
-
   Header always set X-Frame-Options "DENY"
-  Header set X-Frame-Options "DENY"
-
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
-  Header set Referrer-Policy "strict-origin-when-cross-origin"
-
-  Header always set Permissions-Policy "camera=(), geolocation=(), microphone=()"
-  Header set Permissions-Policy "camera=(), geolocation=(), microphone=()"
-
-  # CSP - Basic protection without report-uri (Astro static hosting)
-  Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self'; frame-ancestors 'self'"
-  Header set Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self'; frame-ancestors 'self'"
-
-  # Alternative CSP without report-uri if reporting endpoint doesn't exist
-  # Header always set Content-Security-Policy-Report-Only "default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self'; frame-ancestors 'self'"
-  # Header set Content-Security-Policy-Report-Only "default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self'; frame-ancestors 'self'"
-
-  # CORS for web fonts (allow cross-origin usage)
-  <FilesMatch "\.(eot|ttf|otf|woff|woff2)$">
-    Header always set Access-Control-Allow-Origin "*"
-    Header set Access-Control-Allow-Origin "*"
-  </FilesMatch>
 </IfModule>
 
 # Redirects
