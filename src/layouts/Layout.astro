@@ -91,10 +91,25 @@ const isDefaultOg = !ogImage;
       name: '株式会社BuzzLiminal',
       url: origin,
       logo: logoUrl,
+      image: logoUrl,
       telephone: '090-9950-1315',
       address: [
-        { '@type': 'PostalAddress', streetAddress: '神奈川県相模原市南区上鶴間本町3-10-2-602', addressCountry: 'JP' },
-        { '@type': 'PostalAddress', streetAddress: '東京都町田市原町田1-2-11 グラディート町田804', addressCountry: 'JP' }
+        {
+          '@type': 'PostalAddress',
+          addressRegion: '神奈川県',
+          addressLocality: '相模原市南区',
+          streetAddress: '上鶴間本町3-10-2-602',
+          postalCode: '252-0318',
+          addressCountry: 'JP'
+        },
+        {
+          '@type': 'PostalAddress',
+          addressRegion: '東京都',
+          addressLocality: '町田市',
+          streetAddress: '原町田1-2-11 グラディート町田804',
+          postalCode: '194-0013',
+          addressCountry: 'JP'
+        }
       ]
     })} />
 
